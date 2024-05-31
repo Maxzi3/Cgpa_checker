@@ -190,6 +190,9 @@ main {
     gap: 1rem;
     padding: 10px;;
   }
+  img{
+    width: 15%;
+  }
   .container1 {
     width: 90%;
     padding: 10px;

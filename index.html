@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <title>CGPA CAlCULATOR</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="uli">
+        <button><i class="uil uil-bars"></i></button>
+      </div>
+      <h1 id="head"><span class="logo"><img src="./Images/logo.png" alt="logo"></span>Enugu state University of Science and Technology</h1>
+      <button type="reset" id="Profile">Logout</button>
+    </div>
+    <header>
+      <h1 class="header1">CGPA CACULATOR</h1>
+      <div class="container1">
+        <h4>Enter Your Grades and Get Your CGPA in Seconds</h4>
+        <form class="frm1">
+          <div class="course-code">
+            <label for="course-code" id="course-code">Course-Code:</label>
+            <input
+              type="text"
+              name="course-code"
+              id="code"
+              placeholder="MAT 111"
+            />
+          </div>
+          <div class="course-unit">
+            <label for="course-Unit" id="course-Unit">Course-Unit:</label>
+            <input type="text" name="course-Unit" id="unit" placeholder="3" />
+          </div>
+          <div class="course-grade">
+            <label for="course-grade" id="course-grade">Course-Grade:</label>
+            <select name="course-grade" id="grade">
+              <option value="">Grade</option>
+              <option value="5">A</option>
+              <option value="4">B</option>
+              <option value="3">C</option>
+              <option value="2">D</option>
+              <option value="1">E</option>
+              <option value="0">F</option>
+            </select>
+          </div>
+        </form>
+        <div class="container2">
+          <button class="btn1">Add courses</button>
+          <button class="btn2">Remove courses</button>
+        </div>
+        <main>
+          <div class="tabds">
+            <table id="table1">
+              <tr>
+                <th>Course-code</th>
+                <th>Course unit</th>
+                <th>Course-Grade</th>
+              </tr>
+            </table>
+            <button class="btn3">Submit</button>
+          </div>
+        </main>
+      </div>
+      <h1 class="header2">Your CGPA is <span id="result">5.00</span></h1>
+    </header>
+    <script src="./script.js"></script>
+  </body>
+</html>

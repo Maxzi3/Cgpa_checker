@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <link
@@ -17,11 +18,44 @@
     <div class="navbar">
       <div class="uli">
         <button><i class="uil uil-bars"></i></button>
+        <ul class="Profile">
+          <li class=""><a href="https://portal.esut.edu.ng/login.aspx" target="_blank">Portal Login</a></li>
+        </ul>
       </div>
-      <h1 id="head"><span class="logo"><img src="./Images/logo.png" alt="logo"></span>Enugu state University of Science and Technology</h1>
-      <button type="reset" id="Profile">Logout</button>
+      <div class="enugu">
+        <img src="./Images/logo.png" alt="logo">
+        <h1 id="head">Enugu state University of Science and Technology</h1>
+      </div>
+     
+      <button type="reset" id="Profile">Refresh</button>
     </div>
-    <header>
+    <div class="intro">
+      <h1>YOUR FUTURE IS IN YOUR HANDS</h1>
+      <form>
+        <div class="item1">
+          <label for="name">Your Name:</label>
+          <input type="text" name="" id="username">
+          <label for="Reg-no">Reg-No:</label>
+          <input type="text" name="Reg-No" id="reg-no">
+        </div>
+        <div class="item2">
+          <label for="Level">Level:</label>
+           <select name="level" id="level">
+              <option value="">Level</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+              <option value="500">500</option>
+              <option value="600">600</option>
+            </select>
+          <label for="Department">Department:</label>
+          <input type="text" name="Department" id="Dep">
+        </div>
+        <button class="btn" id="btn1">Enter</button>
+      </form>
+    </div>
+    <header class="display">
       <h1 class="header1">CGPA CACULATOR</h1>
       <div class="container1">
         <h4>Enter Your Grades and Get Your CGPA in Seconds</h4>
@@ -55,22 +89,22 @@
         <div class="container2">
           <button class="btn1">Add courses</button>
           <button class="btn2">Remove courses</button>
-        </div>
-        <main>
-          <div class="tabds">
-            <table id="table1">
-              <tr>
-                <th>Course-code</th>
-                <th>Course unit</th>
-                <th>Course-Grade</th>
-              </tr>
-            </table>
-            <button class="btn3">Submit</button>
-          </div>
-        </main>
+        </header>
       </div>
-      <h1 class="header2">Your CGPA is <span id="result">5.00</span></h1>
-    </header>
+      <main>
+        <div class="tabds">
+          <table id="table1">
+            <tr>
+              <th>Course-code</th>
+              <th>Course unit</th>
+              <th>Course-Grade</th>
+            </tr>
+          </table>
+          <button class="btn3">Submit</button>
+        </div>
+      </main>
+    </div>
+    <h1 class="header2"></h1>
     <script src="./script.js"></script>
   </body>
 </html>

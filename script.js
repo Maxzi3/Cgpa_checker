@@ -1,15 +1,78 @@
-let Add = document.querySelector(".btn1");
-let remove = document.querySelector(".btn2");
-let Submit = document.querySelector(".btn3");
-let score = document.querySelector("#result");
-let CourseCode = document.querySelector("#code");
-let CourseUnit = document.querySelector("#unit");
-let CourseGrade = document.querySelector("#grade");
-let Profile = document.querySelector(".uli");
-let table = document.querySelector("table");
-let main = document.querySelector("main");
-let clear = document.querySelector("#Profile");
+const Enter = document.querySelector("#btn1");
+const Intro= document.querySelector(".intro");
+const cal= document.querySelector(".display");
+const Add = document.querySelector(".btn1");
+const remove = document.querySelector(".btn2");
+const Submit = document.querySelector(".btn3");
+const score = document.querySelector(".header2");
+const CourseCode = document.querySelector("#code");
+const CourseUnit = document.querySelector("#unit");
+const CourseGrade = document.querySelector("#grade");
+const Profile = document.querySelector(".uli");
+const table = document.querySelector("table");
+const main = document.querySelector("main");
+const clear = document.querySelector("#Profile");
+const portal = document.querySelector(".Profile");
+// const UserName = document.querySelector("#username").value
+// const UserReg = document.querySelector("#reg-no").value
+// const UserLevel = document.querySelector("level").value
+// const UserDep = document.querySelector("Dep").value
 let gparry = [];
+
+
+
+Enter.addEventListener('click', (e) =>{
+e.preventDefault();
+
+const UserName = document.querySelector("#username");
+const UserReg = document.querySelector("#reg-no");
+const UserLevel = document.querySelector("#level");
+const UserDep = document.querySelector("#Dep");
+
+let isValid = true;
+let errorMessage = "";
+
+// Clear previous error styles
+UserName.classList.remove("error");
+UserReg.classList.remove("error");
+UserLevel.classList.remove("error");
+UserDep.classList.remove("error");
+
+// Validate Username (at least two words)
+if (!/^\w+\s+\w+/.test(UserName.value)) {
+  isValid = false;
+  errorMessage += "Username must contain at least two names.\n";
+  UserName.classList.add("error");
+}
+
+// Validate Registration Number (at least 13 digits)
+if (!/^\d{13,}$/.test(UserReg.value)) {
+  isValid = false;
+  errorMessage += "Registration Number must be at least 13 digits.\n";
+  UserReg.classList.add("error");
+}
+
+// Validate Department (not empty)
+if (UserDep.value.trim() === "") {
+  isValid = false;
+  errorMessage += "Department must not be empty.\n";
+  UserDep.classList.add("error");
+}
+
+// Validate Level (selected)
+if (UserLevel.value.trim() === "") {
+  isValid = false;
+  errorMessage += "Level must be selected.\n";
+  UserLevel.classList.add("error");
+}
+
+if (isValid) {
+   Intro.classList.add("Dshow");
+   cal.classList.add("show");
+} else {
+  alert(errorMessage);
+}
+})
 
 Add.addEventListener(
   "click",
@@ -59,6 +122,10 @@ remove.addEventListener(
 Submit.addEventListener(
   "click",
   (calgp = () => {
+    const UserName = document.querySelector("#username").value;
+    const UserReg = document.querySelector("#reg-no").value;
+    const UserLevel = document.querySelector("#level").value;
+    const UserDep = document.querySelector("#Dep").value;
     let CourseUnit = 0,
       productOfCourseUnitAndCourseGrade = 0,
       sumProductOfCourseUnitAndCourseGrade = 0;
@@ -68,14 +135,19 @@ Submit.addEventListener(
         parseInt(result.CourseUnit) * parseInt(result.CourseGrade);
       sumProductOfCourseUnitAndCourseGrade += productOfCourseUnitAndCourseGrade;
     });
-    score.innerHTML = (
+  Cgpa= (
       sumProductOfCourseUnitAndCourseGrade / CourseUnit
     ).toFixed(2);
+    cal.classList.add("Dshow");
+    Submit.classList.add("Dshow");
+  score.innerHTML = `Dear ${UserName}, with registration number ${UserReg}, studying at level ${UserLevel} in the ${UserDep} department, your CGPA is ${Cgpa}.`;
+
   })
 );
 clear.addEventListener("click", () => {
   location.reload();
 });
 Profile.addEventListener('click', () =>{
-    window.open("https://portal.esut.edu.ng/login.aspx", '_blank');
+   portal.classList.toggle('show');
+  //  portal.classList.toggle('show');
 })

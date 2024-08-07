@@ -13,10 +13,6 @@ const table = document.querySelector("table");
 const main = document.querySelector("main");
 const clear = document.querySelector("#Profile");
 const portal = document.querySelector(".Profile");
-// const UserName = document.querySelector("#username").value
-// const UserReg = document.querySelector("#reg-no").value
-// const UserLevel = document.querySelector("level").value
-// const UserDep = document.querySelector("Dep").value
 let gparry = [];
 
 
@@ -149,5 +145,4 @@ clear.addEventListener("click", () => {
 });
 Profile.addEventListener('click', () =>{
    portal.classList.toggle('show');
-  //  portal.classList.toggle('show');
 })

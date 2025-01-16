@@ -388,7 +388,7 @@ main {
   }
 .course-grade{
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   width: 100%;
 
 }
@@ -411,7 +411,7 @@ select{
   }
   th {
     font-size: 10px;
-    width: 35%;
+    /* width: 35%; */
     text-transform: uppercase;
   }
 
